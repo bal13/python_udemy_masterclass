@@ -1,7 +1,38 @@
-# jabber = open("e:/Downloads/sample.txt", "r") # ez is működik
-jabber = open("e:\\Downloads\\sample.txt", "r")
+# coding=utf-8
 
-for line in jabber:
-    print(line)
+# jabber = open("e:/Downloads/sample.txt", "r") # ez is működik - Windows!!
+# Mac:
+# jabber = open("/Users/balazs/Prog/Python/python_udemy_masterclass/FileIO/sample.txt", "r")
+# jabber = open("sample.txt", "r")
+#
+# for line in jabber:
+#     if "jabberwock" in line.lower():
+#         print(line, end='')
+#
+# jabber.close()
 
-jabber.close()
+# with open ("sample.txt", "r") as jabber:
+#     for line in jabber:
+#         if "JAB" in line.upper():
+#             print(line, end='')
+
+# with open("sample.txt", 'r') as jabber:
+#     line = jabber.readline()
+#     while line:
+#         print(line, end='')
+#         line = jabber.readline()
+
+with open("sample.txt", 'r') as jabber:
+    lines = jabber.readlines()
+print(lines)
+
+for line in lines[::-1]:
+    print(line, end='')
+
+with open("sample.txt", "r") as jabber:
+    lines = jabber.read()
+    print(lines)
+    print("-------------")
+for line in lines[::-1]:
+    print(line, end='')
+
